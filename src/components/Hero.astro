@@ -35,75 +35,53 @@ const imageAlt = heroImage?.data?.attributes?.alternativeText || heroTitle;
   class="relative bg-gradient-to-br from-background to-accent-50 py-20 sm:py-32"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="text-left">
-        <h1
-          class="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight tracking-wide"
-        >
-          <span class="text-primary-700">{heroTitle}</span>
-        </h1>
+    <div class="max-w-4xl mx-auto text-center">
+      <h1
+        class="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight tracking-wide"
+      >
+        <span class="text-primary-700">{heroTitle}</span>
+      </h1>
 
-        <p class="text-xl text-text-dark mb-8 leading-relaxed">
-          {heroSubtitle}
-        </p>
+      <p class="text-xl text-text-dark mb-8 leading-relaxed">
+        {heroSubtitle}
+      </p>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          {
-            primaryCtaText && primaryCtaLink && (
-              <a
-                href={primaryCtaLink}
-                class="bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 inline-flex items-center gap-2 shadow-warm-lg hover:shadow-warm-xl hover:translate-y-[-2px]"
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        {
+          primaryCtaText && primaryCtaLink && (
+            <a
+              href={primaryCtaLink}
+              class="bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 inline-flex items-center gap-2 shadow-warm-lg hover:shadow-warm-xl hover:translate-y-[-2px]"
+            >
+              {primaryCtaText}
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                {primaryCtaText}
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            )
-          }
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          )
+        }
 
-          {
-            secondaryCtaText && secondaryCtaLink && (
-              <a
-                href={secondaryCtaLink}
-                class="bg-transparent hover:bg-accent-50 text-accent-600 hover:text-accent-700 px-8 py-4 rounded-full font-semibold text-lg border-2 border-accent-600 hover:border-accent-700 transition-all duration-300 inline-block"
-              >
-                {secondaryCtaText}
-              </a>
-            )
-          }
-        </div>
+        {
+          secondaryCtaText && secondaryCtaLink && (
+            <a
+              href={secondaryCtaLink}
+              class="bg-transparent hover:bg-accent-50 text-accent-600 hover:text-accent-700 px-8 py-4 rounded-full font-semibold text-lg border-2 border-accent-600 hover:border-accent-700 transition-all duration-300 inline-block"
+            >
+              {secondaryCtaText}
+            </a>
+          )
+        }
       </div>
-
-      {
-        imageUrl ? (
-          <div class="relative">
-            <img
-              src={imageUrl}
-              alt={imageAlt}
-              class="w-4/5 h-auto mx-auto rounded-2xl shadow-2xl object-cover"
-            />
-          </div>
-        ) : (
-          <div class="relative">
-            <img
-              src="/placeholders/hero.svg"
-              alt={imageAlt}
-              class="w-4/5 h-auto mx-auto rounded-2xl shadow-2xl"
-            />
-          </div>
-        )
-      }
     </div>
   </div>
 </section>
