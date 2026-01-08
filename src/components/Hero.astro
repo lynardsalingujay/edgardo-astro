@@ -91,7 +91,7 @@ const imageAlt = heroImage?.data?.attributes?.alternativeText || heroTitle;
             <img
               src={imageUrl}
               alt={imageAlt}
-              class="w-full h-auto rounded-2xl shadow-2xl"
+              class="w-4/5 h-auto mx-auto rounded-2xl shadow-2xl object-cover"
             />
           </div>
         ) : (
@@ -99,7 +99,7 @@ const imageAlt = heroImage?.data?.attributes?.alternativeText || heroTitle;
             <img
               src="/placeholders/hero.svg"
               alt={imageAlt}
-              class="w-full h-auto rounded-2xl shadow-2xl"
+              class="w-4/5 h-auto mx-auto rounded-2xl shadow-2xl"
             />
           </div>
         )

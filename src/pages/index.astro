@@ -41,25 +41,6 @@ const usingMockData = !strapiMenu?.data?.length;
 >
   <Navigation currentPage="home" />
 
-  <!-- Development Notice Banner -->
-  {
-    usingMockData && (
-      <div class="bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-3 px-4 shadow-warm-md">
-        <div class="max-w-7xl mx-auto text-center">
-          <p class="text-sm md:text-base">
-            ℹ️ <strong>Using Mock Data</strong> | Strapi CMS is not connected.
-            Configure{" "}
-            <code class="bg-white/20 px-2 py-0.5 rounded">
-              PUBLIC_STRAPI_URL
-            </code>{" "}
-            in your <code class="bg-white/20 px-2 py-0.5 rounded">.env</code>{" "}
-            file to load real content from Strapi CMS
-          </p>
-        </div>
-      </div>
-    )
-  }
-
   <!-- Hero Section -->
   <Hero heroData={heroData} />
 

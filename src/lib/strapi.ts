@@ -249,9 +249,9 @@ export async function downloadStrapiImage(url: string | undefined | null): Promi
     return null;
   }
   
-  // If it's already a local path (starts with /), return it as-is
-  if (url.startsWith('/')) {
-    return url;
+  // In development mode, use the full Strapi URL directly
+  if (import.meta.env.DEV) {
+    return getStrapiMedia(url);
   }
   
   // If it's a relative URL, make it absolute
@@ -304,7 +304,7 @@ export async function downloadStrapiImage(url: string | undefined | null): Promi
     }
   }
   
-  // In development mode, use remote URLs directly for faster hot reload
+  // Should not reach here, but return full URL as fallback
   return getStrapiMedia(url);
 }
 
@@ -312,13 +312,13 @@ export function getStrapiMedia(url: string | undefined | null): string | null {
   if (!url) return null;
   
   // If the URL is already absolute, return it
-  if (url.startsWith('http') || url.startsWith('/')) {
+  if (url.startsWith('http')) {
     return url;
   }
   
-  // If no Strapi URL configured, return the path as-is
+  // If no Strapi URL configured, return null
   if (!STRAPI_URL) {
-    return url;
+    return null;
   }
   
   // Otherwise, prepend the Strapi URL
