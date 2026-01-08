@@ -1,0 +1,160 @@
+/* Edgardo's Grill - Global Styles */
+
+:root {
+   /* Color Palette */
+   --color-primary: #1C1C1C;
+   --color-secondary: #D96B2B;
+   --color-accent: #C9A24D;
+   --color-background: #F7F3EE;
+   --color-text-dark: #2B2B2B;
+   --color-text-light: #FFFFFF;
+
+   /* Typography */
+   --font-heading: 'Bebas Neue', sans-serif;
+   --font-body: 'Montserrat', system-ui, sans-serif;
+
+   /* Spacing */
+   --spacing-xs: 0.5rem;
+   --spacing-sm: 1rem;
+   --spacing-md: 1.5rem;
+   --spacing-lg: 2rem;
+   --spacing-xl: 3rem;
+   --spacing-2xl: 4rem;
+}
+
+/* Typography Utilities */
+.heading-display {
+   font-family: var(--font-heading);
+   font-weight: 700;
+   line-height: 1.2;
+   color: var(--color-primary);
+}
+
+.heading-1 {
+   font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.heading-2 {
+   font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.heading-3 {
+   font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.heading-4 {
+   font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.body-text {
+   font-family: var(--font-body);
+   line-height: 1.75;
+   color: var(--color-text-dark);
+}
+
+/* Button Utilities */
+.cta-primary {
+   background-color: var(--color-secondary);
+   color: var(--color-text-light);
+   padding: 1rem 2rem;
+   border-radius: 9999px;
+   font-weight: 600;
+   font-size: 1.125rem;
+   transition: all 0.3s ease;
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   border: none;
+   cursor: pointer;
+   box-shadow: 0 4px 6px -1px rgba(217, 107, 43, 0.1), 0 2px 4px -1px rgba(217, 107, 43, 0.06);
+}
+
+.cta-primary:hover {
+   background-color: #b94a1e;
+   box-shadow: 0 10px 15px -3px rgba(217, 107, 43, 0.1), 0 4px 6px -2px rgba(217, 107, 43, 0.05);
+   transform: translateY(-2px);
+}
+
+.cta-secondary {
+   background-color: transparent;
+   color: var(--color-accent);
+   padding: 1rem 2rem;
+   border-radius: 9999px;
+   font-weight: 600;
+   font-size: 1.125rem;
+   transition: all 0.3s ease;
+   display: inline-block;
+   border: 2px solid var(--color-accent);
+   cursor: pointer;
+}
+
+.cta-secondary:hover {
+   background-color: rgba(201, 162, 77, 0.1);
+   border-color: #a87b2e;
+   color: #a87b2e;
+}
+
+/* Card Styles */
+.card-warm {
+   background: white;
+   border-radius: 1rem;
+   padding: var(--spacing-lg);
+   box-shadow: 0 4px 6px -1px rgba(217, 107, 43, 0.1), 0 2px 4px -1px rgba(217, 107, 43, 0.06);
+   transition: all 0.3s ease;
+}
+
+.card-warm:hover {
+   box-shadow: 0 20px 25px -5px rgba(217, 107, 43, 0.1), 0 10px 10px -5px rgba(217, 107, 43, 0.04);
+   transform: translateY(-4px);
+}
+
+/* Section Container */
+.section-container {
+   max-width: 80rem;
+   margin: 0 auto;
+   padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+/* Warm Gradient */
+.gradient-warm {
+   background: linear-gradient(135deg, var(--color-background) 0%, rgba(201, 162, 77, 0.1) 100%);
+}
+
+.gradient-warm-dark {
+   background: linear-gradient(135deg, var(--color-primary) 0%, rgba(217, 107, 43, 0.3) 100%);
+}
+
+/* Focus Styles */
+*:focus-visible {
+   outline: 2px solid var(--color-secondary);
+   outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+a, button, input, textarea, select {
+   transition: all 0.2s ease;
+}
+
+/* Premium Spacing */
+.prose {
+   max-width: 65ch;
+   line-height: 1.75;
+}
+
+.prose p {
+   margin-bottom: var(--spacing-md);
+}
+
+.prose h2 {
+   margin-top: var(--spacing-xl);
+   margin-bottom: var(--spacing-md);
+}
+
+/* Utility Classes */
+.text-balance {
+   text-wrap: balance;
+}
+
+.shadow-warm-soft {
+   box-shadow: 0 2px 8px rgba(217, 107, 43, 0.08);
+}

@@ -4,6 +4,7 @@ import { mockMenuItems } from "../lib/mockData";
 import SimpleMenuCard from "../components/SimpleMenuCard.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // ⚡ RESILIENT BUILD-TIME DATA FETCHING
 // Fetch real data from Strapi, fall back to mock data if unavailable
@@ -14,29 +15,16 @@ const menu = strapiMenu?.data?.length ? strapiMenu : mockMenuItems;
 const usingMockData = !strapiMenu?.data?.length;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Our complete menu of delicious dishes" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Menu - Restaurant Name</title>
-  </head>
-  <body class="font-['Inter'] bg-slate-50">
-    <Navigation currentPage="menu" />
+<BaseLayout 
+  title="Menu - Edgardo's Grill"
+  description="Authentic Bacolod inasal and Filipino grill specialties. Explore our full menu of traditional favorites."
+>
+  <Navigation currentPage="menu" />
 
     <!-- Development Notice Banner -->
     {
       usingMockData && (
-        <div class="bg-gradient-to-r from-amber-500 to-orange-600 text-white py-3 px-4">
+        <div class="bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-3 px-4 shadow-warm-md">
           <div class="max-w-7xl mx-auto text-center">
             <p class="text-sm md:text-base">
               ℹ️ <strong>Using Mock Data</strong> | Strapi CMS is not connected.
@@ -53,13 +41,12 @@ const usingMockData = !strapiMenu?.data?.length;
 
     <!-- Menu Header -->
     <section
-      class="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20"
+      class="bg-gradient-to-br from-primary-700 to-secondary-700 text-white py-20"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-5xl sm:text-6xl font-bold mb-6">Our Menu</h1>
-        <p class="text-xl text-slate-200 max-w-2xl mx-auto">
-          Explore our full selection of expertly crafted dishes, made fresh
-          daily with the finest ingredients.
+        <h1 class="text-5xl sm:text-6xl font-serif font-bold mb-6 tracking-wide">Our Menu</h1>
+        <p class="text-xl text-slate-100 max-w-2xl mx-auto">
+          Authentic Bacolod-style inasal, expertly grilled to perfection with our secret marinade. Lasa ng tunay na Bacolod!
         </p>
       </div>
     </section>
@@ -72,8 +59,6 @@ const usingMockData = !strapiMenu?.data?.length;
         </div>
       </div>
     </section>
-    ) }
-  </body>
-</html>
 
-<Footer />
+  <Footer />
+</BaseLayout>

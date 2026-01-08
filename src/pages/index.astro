@@ -10,6 +10,7 @@ import SimpleMenuCard from "../components/SimpleMenuCard.astro";
 import Hero from "../components/Hero.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // ⚡ RESILIENT BUILD-TIME DATA FETCHING
 // All Strapi API calls execute during build (astro build), NOT at runtime.
@@ -34,29 +35,16 @@ const featuredItems = menu.data.slice(0, 3);
 const usingMockData = !strapiMenu?.data?.length;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Delicious food made fresh daily" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Restaurant Name - Delicious Food, Made Fresh Daily</title>
-  </head>
-  <body class="font-['Inter'] bg-slate-50">
-    <Navigation currentPage="home" />
+<BaseLayout 
+  title="Edgardo's Grill - Bacolod Authentic Inasal"
+  description="Experience authentic Bacolod inasal and Filipino grill specialties. Fresh, flavorful, and made with passion."
+>
+  <Navigation currentPage="home" />
 
     <!-- Development Notice Banner -->
-    {
+    {  
       usingMockData && (
-        <div class="bg-gradient-to-r from-amber-500 to-orange-600 text-white py-3 px-4">
+        <div class="bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-3 px-4 shadow-warm-md">
           <div class="max-w-7xl mx-auto text-center">
             <p class="text-sm md:text-base">
               ℹ️ <strong>Using Mock Data</strong> | Strapi CMS is not connected.
@@ -78,35 +66,35 @@ const usingMockData = !strapiMenu?.data?.length;
     <!-- Why Choose Us Section -->
     <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-primary-700">
-          Why Choose Us?
+        <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary-700 tracking-wide">
+          Why Choose Edgardo's?
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="text-center p-6">
-            <div class="text-5xl mb-4">🍽️</div>
-            <h3 class="text-xl font-semibold mb-2 text-primary-700">
-              Quality Ingredients
+            <div class="text-5xl mb-4">🔥</div>
+            <h3 class="text-xl font-serif font-semibold mb-2 text-primary-700 tracking-wide">
+              Authentic Inasal
             </h3>
-            <p class="text-gray-600">
-              We source the finest ingredients for every dish we create.
+            <p class="text-text-dark">
+              Traditional Bacolod-style grilling with secret marinades passed through generations.
             </p>
           </div>
           <div class="text-center p-6">
             <div class="text-5xl mb-4">👨‍🍳</div>
-            <h3 class="text-xl font-semibold mb-2 text-primary-700">
-              Expert Chefs
+            <h3 class="text-xl font-serif font-semibold mb-2 text-primary-700 tracking-wide">
+              Expert Grill Masters
             </h3>
-            <p class="text-gray-600">
-              Our experienced chefs bring passion and skill to every plate.
+            <p class="text-text-dark">
+              Our experienced grill masters bring passion and skill to every perfectly charred dish.
             </p>
           </div>
           <div class="text-center p-6">
             <div class="text-5xl mb-4">⭐</div>
-            <h3 class="text-xl font-semibold mb-2 text-primary-700">
-              Exceptional Service
+            <h3 class="text-xl font-serif font-semibold mb-2 text-primary-700 tracking-wide">
+              Filipino Hospitality
             </h3>
-            <p class="text-gray-600">
-              We're committed to making your dining experience memorable.
+            <p class="text-text-dark">
+              Experience warm, authentic Filipino service that makes every meal special.
             </p>
           </div>
         </div>
@@ -114,13 +102,13 @@ const usingMockData = !strapiMenu?.data?.length;
     </section>
 
     <!-- Menu Preview Section -->
-    <section id="menu" class="py-20 bg-slate-50">
+    <section id="menu" class="py-20 bg-gradient-to-br from-background to-accent-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-4 text-primary-700">
-          Featured Dishes
+        <h2 class="text-4xl font-serif font-bold text-center mb-4 text-primary-700 tracking-wide">
+          Featured Inasal & Grill
         </h2>
-        <p class="text-center text-gray-600 mb-12 text-lg">
-          Discover our delicious selection of signature dishes
+        <p class="text-center text-text-dark mb-12 text-lg">
+          Discover our signature Bacolod-style grilled specialties
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -130,7 +118,7 @@ const usingMockData = !strapiMenu?.data?.length;
         <div class="text-center mt-12">
           <a
             href="/menu"
-            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+            class="inline-block bg-secondary-600 hover:bg-secondary-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-warm-lg hover:shadow-warm-xl hover:translate-y-[-2px]"
           >
             View Full Menu
           </a>
@@ -139,5 +127,4 @@ const usingMockData = !strapiMenu?.data?.length;
     </section>
 
     <Footer />
-  </body>
-</html>
+</BaseLayout>

@@ -15,7 +15,7 @@ const cuisineName = cuisine?.data?.attributes?.name;
 ---
 
 <div
-  class="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col border-2 border-gray-200"
+  class="group bg-white rounded-2xl overflow-hidden hover:shadow-warm-xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col border-2 border-gray-100 shadow-warm-md"
 >
   <div class="relative aspect-[16/11] overflow-hidden bg-gray-100">
     {
@@ -26,8 +26,8 @@ const cuisineName = cuisine?.data?.attributes?.name;
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
       ) : (
-        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-700 text-white font-bold text-2xl">
-          <span class="opacity-90">Restaurant Name</span>
+        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary-600 to-secondary-700 text-white font-serif font-bold text-2xl">
+          <span class="opacity-90">Edgardo's Grill</span>
         </div>
       )
     }
@@ -36,12 +36,12 @@ const cuisineName = cuisine?.data?.attributes?.name;
       (isMadeToOrder || cuisineName) && (
         <div class="absolute top-4 right-4 flex flex-col gap-2 items-end">
           {isMadeToOrder && (
-            <span class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-primary-700 shadow-lg border-2 border-primary-600">
+            <span class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-secondary-700 shadow-warm-md border-2 border-secondary-600">
               Made to Order
             </span>
           )}
           {cuisineName && (
-            <span class="px-3 py-1.5 rounded-full text-xs font-bold bg-accent-50 text-accent-600 shadow-lg border-2 border-accent-500">
+            <span class="px-3 py-1.5 rounded-full text-xs font-bold bg-accent-100 text-accent-700 shadow-warm-md border-2 border-accent-600">
               {cuisineName}
             </span>
           )}
@@ -53,11 +53,11 @@ const cuisineName = cuisine?.data?.attributes?.name;
   <div class="p-6 flex-grow flex flex-col">
     <div class="flex justify-between items-start gap-4 mb-3">
       <h3
-        class="text-xl font-bold text-primary-700 leading-tight m-0 group-hover:text-accent-600 transition-colors"
+        class="text-xl font-serif font-bold text-primary-700 leading-tight m-0 group-hover:text-secondary-600 transition-colors tracking-wide"
       >
         {name}
       </h3>
-      <span class="text-accent-600 font-bold text-xl whitespace-nowrap"
+      <span class="text-secondary-600 font-bold text-xl whitespace-nowrap"
         >${price.toFixed(2)}</span
       >
     </div>

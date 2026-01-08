@@ -10,10 +10,11 @@ const isActive = (page: string) => currentPage === page;
 
 <nav class="bg-white shadow-md sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-primary-700"
-          >Restaurant Name</a
+    <div class="flex justify-between items-center h-20">
+      <div class="flex items-center gap-3">
+        <img src="/logo.png" alt="Edgardo's Grill Logo" class="h-14 md:h-16 w-auto" />
+        <a href="/" class="text-2xl md:text-3xl font-serif font-bold text-primary-700 tracking-wide"
+          >Edgardo's Grill</a
         >
       </div>
 
@@ -21,22 +22,22 @@ const isActive = (page: string) => currentPage === page;
       <div class="hidden md:flex space-x-8">
         <a
           href="/"
-          class={`font-medium transition-colors ${isActive("home") ? "text-accent-600" : "text-primary-700 hover:text-accent-600"}`}
+          class={`font-medium transition-colors ${isActive("home") ? "text-secondary-600" : "text-primary-700 hover:text-secondary-600"}`}
           >Home</a
         >
         <a
           href="/menu"
-          class={`font-medium transition-colors ${isActive("menu") ? "text-accent-600" : "text-primary-700 hover:text-accent-600"}`}
+          class={`font-medium transition-colors ${isActive("menu") ? "text-secondary-600" : "text-primary-700 hover:text-secondary-600"}`}
           >Menu</a
         >
         <a
           href="/about"
-          class={`font-medium transition-colors ${isActive("about") ? "text-accent-600" : "text-primary-700 hover:text-accent-600"}`}
+          class={`font-medium transition-colors ${isActive("about") ? "text-secondary-600" : "text-primary-700 hover:text-secondary-600"}`}
           >About</a
         >
         <a
           href="/contact"
-          class={`font-medium transition-colors ${isActive("contact") ? "text-accent-600" : "text-primary-700 hover:text-accent-600"}`}
+          class={`font-medium transition-colors ${isActive("contact") ? "text-secondary-600" : "text-primary-700 hover:text-secondary-600"}`}
           >Contact</a
         >
       </div>
