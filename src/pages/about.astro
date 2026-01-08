@@ -5,134 +5,155 @@ import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout 
+<BaseLayout
   title="About Us - Edgardo's Grill"
   description="Discover the story behind Edgardo's Grill - bringing authentic Bacolod inasal to your table since day one."
 >
   <Navigation currentPage="about" />
 
-    <!-- Development Notice Banner -->
-    {
-      !import.meta.env.PUBLIC_STRAPI_URL && (
-        <div class="bg-gradient-to-r from-accent-600 to-accent-700 text-white py-3 px-4 shadow-warm-md">
-          <div class="max-w-7xl mx-auto text-center">
-            <p class="text-sm md:text-base">
-              🚀 <strong>Edgardo's Grill - Customized for Authentic Inasal</strong> |
-              Customize this content in{" "}
-              <code class="bg-white/20 px-2 py-0.5 rounded">
-                src/pages/about.astro
-              </code>
-            </p>
-          </div>
-        </div>
-      )
-    }
-
-    <!-- About Header -->
-    <section
-      class="bg-gradient-to-br from-primary-700 to-secondary-700 text-white py-20"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-5xl sm:text-6xl font-serif font-bold mb-6 tracking-wide">About Us</h1>
-        <p class="text-xl text-slate-100 max-w-2xl mx-auto">
-          Discover our story, passion for authentic inasal, and commitment to Filipino culinary traditions.
-        </p>
-      </div>
-    </section>
-
-    <!-- Our Story -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <img
-              src="/placeholders/about.svg"
-              alt="Edgardo's Grill Story"
-              class="w-full h-auto rounded-2xl shadow-warm-xl"
-            />
-          </div>
-          <div>
-            <h2 class="text-4xl font-serif font-bold mb-6 text-primary-700 tracking-wide">Our Story</h2>
-            <p class="text-text-dark text-lg mb-4 leading-relaxed">
-              Edgardo's Grill brings the authentic taste of Bacolod City to your table. 
-              What started as a passion for preserving traditional Filipino grilling techniques has
-              grown into a beloved dining destination.
-            </p>
-            <p class="text-gray-600 text-lg mb-4 leading-relaxed">
-              Our commitment is simple: serve exceptional food made from the
-              finest ingredients, prepared with care by our talented team of
-              chefs. Every dish tells a story and reflects our dedication to
-              grown into a beloved local spot where family recipes meet modern Filipino cuisine.
-            </p>
-            <p class="text-text-dark text-lg leading-relaxed">
-              We believe that great inasal brings people together, creating
-              memories that last a lifetime. That's why we pour our hearts into
-              every skewer, marinated with secret family recipes and grilled over authentic charcoal flames.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Values -->
-    <section class="py-20 bg-gradient-to-br from-background to-accent-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary-700 tracking-wide">
-          Our Values
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-2xl shadow-warm-lg text-center">
-            <div class="text-5xl mb-4">🔥</div>
-            <h3 class="text-2xl font-serif font-semibold mb-4 text-primary-700 tracking-wide">
-              Authenticity
-            </h3>
-            <p class="text-text-dark leading-relaxed">
-              We stay true to Bacolod traditions. From our marinade to our grilling technique,
-              every detail honors the authentic inasal experience.
-            </p>
-          </div>
-          <div class="bg-white p-8 rounded-2xl shadow-warm-lg text-center">
-            <div class="text-5xl mb-4">❤️</div>
-            <h3 class="text-2xl font-serif font-semibold mb-4 text-primary-700 tracking-wide">
-              Passion
-            </h3>
-            <p class="text-text-dark leading-relaxed">
-              Our love for Filipino food and hospitality drives everything we do. We're
-              passionate about sharing our heritage with every guest.
-            </p>
-          </div>
-          <div class="bg-white p-8 rounded-2xl shadow-warm-lg text-center">
-            <div class="text-5xl mb-4">🤝</div>
-            <h3 class="text-2xl font-serif font-semibold mb-4 text-primary-700 tracking-wide">
-              Community
-            </h3>
-            <p class="text-text-dark leading-relaxed">
-              We're proud to bring Filipino flavors to our community, creating a welcoming
-              space where everyone feels like family.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section (Optional) -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary-700 tracking-wide">
-          Meet Our Grill Masters
-        </h2>
-        <p class="text-center text-text-dark mb-12 text-lg max-w-2xl mx-auto">
-          Behind every perfectly grilled inasal is a team of dedicated professionals who bring
-          tradition, skill, and passion to the grill.
-        </p>
-        <div class="text-center">
-          <p class="text-text-dark text-lg">
-            Our talented grill masters, servers, and staff work together to ensure your
-            dining experience captures the true spirit of Bacolod.
+  <!-- Development Notice Banner -->
+  {
+    !import.meta.env.PUBLIC_STRAPI_URL && (
+      <div class="bg-gradient-to-r from-accent-600 to-accent-700 text-white py-3 px-4 shadow-warm-md">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-sm md:text-base">
+            🚀{" "}
+            <strong>Edgardo's Grill - Customized for Authentic Inasal</strong> |
+            Customize this content in{" "}
+            <code class="bg-white/20 px-2 py-0.5 rounded">
+              src/pages/about.astro
+            </code>
           </p>
         </div>
       </div>
-    </section>
+    )
+  }
 
-    <Footer />
+  <!-- About Header -->
+  <section
+    class="bg-gradient-to-br from-primary-700 to-secondary-700 text-white py-20"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl sm:text-6xl font-serif font-bold mb-6 tracking-wide">
+        About Us
+      </h1>
+      <p class="text-xl text-slate-100 max-w-2xl mx-auto">
+        Discover our story, passion for authentic inasal, and commitment to
+        Filipino culinary traditions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img
+            src="/placeholders/about.svg"
+            alt="Edgardo's Grill Story"
+            class="w-full h-auto rounded-2xl shadow-warm-xl"
+          />
+        </div>
+        <div>
+          <h2
+            class="text-4xl font-serif font-bold mb-6 text-primary-700 tracking-wide"
+          >
+            Our Story
+          </h2>
+          <p class="text-text-dark text-lg mb-4 leading-relaxed">
+            Edgardo's Grill brings the authentic taste of Bacolod City to your
+            table. What started as a passion for preserving traditional Filipino
+            grilling techniques has grown into a beloved dining destination.
+          </p>
+          <p class="text-gray-600 text-lg mb-4 leading-relaxed">
+            Our commitment is simple: serve exceptional food made from the
+            finest ingredients, prepared with care by our talented team of
+            chefs. Every dish tells a story and reflects our dedication to grown
+            into a beloved local spot where family recipes meet modern Filipino
+            cuisine.
+          </p>
+          <p class="text-text-dark text-lg leading-relaxed">
+            We believe that great inasal brings people together, creating
+            memories that last a lifetime. That's why we pour our hearts into
+            every skewer, marinated with secret family recipes and grilled over
+            authentic charcoal flames.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="py-20 bg-gradient-to-br from-background to-accent-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-4xl font-serif font-bold text-center mb-12 text-primary-700 tracking-wide"
+      >
+        Our Values
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-warm-lg text-center">
+          <div class="text-5xl mb-4">🔥</div>
+          <h3
+            class="text-2xl font-serif font-semibold mb-4 text-primary-700 tracking-wide"
+          >
+            Authenticity
+          </h3>
+          <p class="text-text-dark leading-relaxed">
+            We stay true to Bacolod traditions. From our marinade to our
+            grilling technique, every detail honors the authentic inasal
+            experience.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-warm-lg text-center">
+          <div class="text-5xl mb-4">❤️</div>
+          <h3
+            class="text-2xl font-serif font-semibold mb-4 text-primary-700 tracking-wide"
+          >
+            Passion
+          </h3>
+          <p class="text-text-dark leading-relaxed">
+            Our love for Filipino food and hospitality drives everything we do.
+            We're passionate about sharing our heritage with every guest.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-warm-lg text-center">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3
+            class="text-2xl font-serif font-semibold mb-4 text-primary-700 tracking-wide"
+          >
+            Community
+          </h3>
+          <p class="text-text-dark leading-relaxed">
+            We're proud to bring Filipino flavors to our community, creating a
+            welcoming space where everyone feels like family.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section (Optional) -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-4xl font-serif font-bold text-center mb-6 text-primary-700 tracking-wide"
+      >
+        Meet Our Grill Masters
+      </h2>
+      <p class="text-center text-text-dark mb-12 text-lg max-w-2xl mx-auto">
+        Behind every perfectly grilled inasal is a team of dedicated
+        professionals who bring tradition, skill, and passion to the grill.
+      </p>
+      <div class="text-center">
+        <p class="text-text-dark text-lg">
+          Our talented grill masters, servers, and staff work together to ensure
+          your dining experience captures the true spirit of Bacolod.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
 </BaseLayout>

@@ -15,50 +15,53 @@ const menu = strapiMenu?.data?.length ? strapiMenu : mockMenuItems;
 const usingMockData = !strapiMenu?.data?.length;
 ---
 
-<BaseLayout 
+<BaseLayout
   title="Menu - Edgardo's Grill"
   description="Authentic Bacolod inasal and Filipino grill specialties. Explore our full menu of traditional favorites."
 >
   <Navigation currentPage="menu" />
 
-    <!-- Development Notice Banner -->
-    {
-      usingMockData && (
-        <div class="bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-3 px-4 shadow-warm-md">
-          <div class="max-w-7xl mx-auto text-center">
-            <p class="text-sm md:text-base">
-              ℹ️ <strong>Using Mock Data</strong> | Strapi CMS is not connected.
-              Configure{" "}
-              <code class="bg-white/20 px-2 py-0.5 rounded">
-                PUBLIC_STRAPI_URL
-              </code>{" "}
-              to load real menu items
-            </p>
-          </div>
-        </div>
-      )
-    }
-
-    <!-- Menu Header -->
-    <section
-      class="bg-gradient-to-br from-primary-700 to-secondary-700 text-white py-20"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-5xl sm:text-6xl font-serif font-bold mb-6 tracking-wide">Our Menu</h1>
-        <p class="text-xl text-slate-100 max-w-2xl mx-auto">
-          Authentic Bacolod-style inasal, expertly grilled to perfection with our secret marinade. Lasa ng tunay na Bacolod!
-        </p>
-      </div>
-    </section>
-
-    <!-- Full Menu Grid -->
-    <section class="py-20 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menu.data.map((item) => <SimpleMenuCard item={item} />)}
+  <!-- Development Notice Banner -->
+  {
+    usingMockData && (
+      <div class="bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-3 px-4 shadow-warm-md">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-sm md:text-base">
+            ℹ️ <strong>Using Mock Data</strong> | Strapi CMS is not connected.
+            Configure{" "}
+            <code class="bg-white/20 px-2 py-0.5 rounded">
+              PUBLIC_STRAPI_URL
+            </code>{" "}
+            to load real menu items
+          </p>
         </div>
       </div>
-    </section>
+    )
+  }
+
+  <!-- Menu Header -->
+  <section
+    class="bg-gradient-to-br from-primary-700 to-secondary-700 text-white py-20"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl sm:text-6xl font-serif font-bold mb-6 tracking-wide">
+        Our Menu
+      </h1>
+      <p class="text-xl text-slate-100 max-w-2xl mx-auto">
+        Authentic Bacolod-style inasal, expertly grilled to perfection with our
+        secret marinade. Lasa ng tunay na Bacolod!
+      </p>
+    </div>
+  </section>
+
+  <!-- Full Menu Grid -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {menu.data.map((item) => <SimpleMenuCard item={item} />)}
+      </div>
+    </div>
+  </section>
 
   <Footer />
 </BaseLayout>
